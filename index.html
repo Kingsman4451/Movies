@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+
+      <h2 class="display-3 fw-bold text-center mt-4 text-danger">Movies</h2>
+
+      <ul class="js-movies-list movies-list d-flex flex-wrap justify-content-center p-0 mt-5"></ul>
+
+    </div>
+
+    <template>
+      <li class="card p-4">
+        <span class="line"></span>
+
+        <span class="line"></span>
+
+        <span class="line"></span>
+
+        <span class="line"></span>
+        
+        <div class="card-content">
+          <h3 class="text-white">Name</h3>
+
+          <div class="card-info p-3 overflow-auto">
+            <p><span class="text-white">Year: </span><span class="card-text text-secondary">2010</span></p>
+
+            <p class="text-white m-0">Genres: </p>
+
+            <p class="card-text text-secondary">Dramma, Fantastika, Horror</p>
+            <p class="text-white m-0">Cast: </p>
+
+            <p class="card-text text-secondary">
+              Chris Pine, Shawn Christian, John Hawkes, Bre Blair, Muse Watson, Robert Pine, Brent Briscoe, Lin Shaye
+            </p>
+          </div>
+        </div>
+      </li>
+    </template>
+  </main>
+
+  <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="./js/kinolar.js"></script>
+  <script src="./js/utilts.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
