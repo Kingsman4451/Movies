@@ -1,38 +1,19 @@
 // Call movie list
 let elMoviesList = $(".js-movies-list");
+let elTemlateMovies = $("#movie-template").content;
 
 // Splice kinolar ayyay first 100 elements
 let movies = kinolar.splice(0, 100);
 
 // Dispaly movie card function
 function displayMovieCard(kino){
-  let newListItem = createElement("li", "card p-4");
-  for (let i = 0; i < 4; i++) {
-    let newLineSpan = createElement("span", "line");
-    newListItem.append(newLineSpan);
-  }
+  let newListItem = elTemlateMovies.cloneNode(true);
 
-  let newCardContent = createElement("div", "card-content");
-  newListItem.append(newCardContent)
-
-
-  let newCardTitle = createElement("h3", "text-white h5", kino.title.toString());
-  let newContentInfo = createElement("div", "card-info p-3 overflow-auto");
-  newCardContent.append(newCardTitle, newContentInfo)
-
-
-  let newInfoText = createElement("p");
-  let newInfoTextYear = createElement("span", "text-white", "Year: ");
-  let newInfoYearRes = createElement("span", "card-text text-secondary", kino.year.toString());
-  newInfoText.append(newInfoTextYear, newInfoYearRes)
-
-
-  let newInfoTextGenres = createElement("p", "text-white m-0", "Genres: ")
-  let newInfoGenresRes = createElement("p", "card-text text-secondary", kino.genres.join(", "));
-  let newInfoTextCast = createElement("p", "text-white m-0", "Cast: ")
-  let newInfoCastRes = createElement("p", "card-text text-secondary", kino.cast.join(", "))
-  newContentInfo.append(newInfoText, newInfoTextGenres, newInfoGenresRes, newInfoTextCast, newInfoCastRes);
-
+  $(".movie-name", newListItem).textContent = kino.title.toString();
+  $(".movie-year", newListItem).textContent = kino.year;
+  $(".movie-genres", newListItem).textContent = kino.genres.join(", ");
+  $(".movie-cast", newListItem).textContent = kino.cast.join(", ");
+  
   return newListItem
 }
 
