@@ -6,13 +6,13 @@ let elTemlateMovies = $("#movie-template").content;
 let movies = kinolar.splice(0, 100);
 
 // Dispaly movie card function
-function displayMovieCard(kino){
+function displayMovieCard(movie){
   let newListItem = elTemlateMovies.cloneNode(true);
 
-  $(".movie-name", newListItem).textContent = kino.title.toString();
-  $(".movie-year", newListItem).textContent = kino.year;
-  $(".movie-genres", newListItem).textContent = kino.genres.join(", ");
-  $(".movie-cast", newListItem).textContent = kino.cast.join(", ");
+  $(".movie-name", newListItem).textContent = movie.title.toString();
+  $(".movie-year", newListItem).textContent = movie.year;
+  $(".movie-genres", newListItem).textContent = movie.genres.join(", ");
+  $(".movie-cast", newListItem).textContent = movie.cast.join(", ");
   
   return newListItem
 }
@@ -21,8 +21,8 @@ function displayMovieCard(kino){
 let renderMovies = function() {
 
   let elMoviesWrapperFragment = document.createDocumentFragment();
-  movies.forEach(function(kino) {
-    elMoviesWrapperFragment.append(displayMovieCard(kino))
+  movies.forEach(function(movie) {
+    elMoviesWrapperFragment.append(displayMovieCard(movie))
   })
   
   elMoviesList.append(elMoviesWrapperFragment)
