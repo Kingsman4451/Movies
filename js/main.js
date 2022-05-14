@@ -16,14 +16,14 @@ function displayMovieCard(kino){
   newListItem.append(newCardContent)
 
 
-  let newCardTitle = createElement("h3", "text-white h5", kino.title);
+  let newCardTitle = createElement("h3", "text-white h5", kino.title.toString());
   let newContentInfo = createElement("div", "card-info p-3 overflow-auto");
   newCardContent.append(newCardTitle, newContentInfo)
 
 
   let newInfoText = createElement("p");
   let newInfoTextYear = createElement("span", "text-white", "Year: ");
-  let newInfoYearRes = createElement("span", "card-text text-secondary", kino.year);
+  let newInfoYearRes = createElement("span", "card-text text-secondary", kino.year.toString());
   newInfoText.append(newInfoTextYear, newInfoYearRes)
 
 
