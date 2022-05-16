@@ -1,6 +1,27 @@
 body {
   background-color: #08001b;
 }
+.form {
+  position: relative;
+  max-width: 400px;
+  background: #0c002b;
+  display: flex;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.form-input {
+  outline: none;
+}
+.form::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  width:50%;
+  background: rgba(255,255,255,0.1);
+  pointer-events: none;
+}
 .movies-list {
   gap: 40px;
 }
